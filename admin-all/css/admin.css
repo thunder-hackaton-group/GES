@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#link-1{
+    border-bottom: 2px solid rgb(110, 27, 110);
+}
+
+nav{
+    width: 25%;
+    float:left;
+    position: relative;
+    display: inline-block;
+    box-shadow: 3px 3px 4px grey;
+    min-height: 100%;
+    max-height: 100%;
+    padding: 0 0 20px 0;
+}
+
+nav header{
+    background-image: linear-gradient(rgb(150, 0, 150),rgb(53, 1, 53));
+    padding: 20px;
+    height: 150px;
+    color: white;
+    text-align: center;
+}
+
+nav header h2{
+    color: whitesmoke;
+    font-variant: small-caps;
+    font-size: 18px;
+    position: relative;
+}
+
+nav header h1{
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.list-link span{
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    padding: 20px;
+    cursor: pointer;
+    transition: border 1s, color 2s;
+}
+
+.rootN{
+    text-align: right;
+    text-decoration: underline;
+    color: antiquewhite;
+    cursor: pointer;
+    padding: 10px;
+    filter: blur(0.2em);
+    transition: filter 1s;
+}
+
+.rootN:hover{
+    filter: blur(0);
+}
+
+/* ---------------------------- Page du contenu ---------------------------------------- */
+
+/* ---------------------------- Ajout Page ------------------------------------------*/
+
+.content{
+    position: absolute;
+    float: left;
+    width: 65%;
+    margin: 0 0 0 30%;
+    padding: 40px 10px 0 10px;
+    box-shadow: 3px 3px 5px grey;
+    border-radius : 10px;
+    max-height: 100%;
+    min-height: auto;
+}
+
+#ajoutP{
+    display: block;
+}
+
+.content #ajoutP form .form-left,.content #modifyP form .form-left{
+    float: left;
+    width: 50%;
+}
+
+label{
+    margin: 0 0 0 10px;
+    color: rgb(50, 50, 50);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+input{
+    margin: 5px 0 30px 20px;
+    padding: 10px;
+    width: 60%;
+    border-color: transparent;
+    border-bottom: 1px solid rgb(129, 129, 129);
+    caret-color: blueviolet;
+    transition: border 1s ease,width 1s;
+}
+
+.valider{
+    display: block;
+    width: 50%;
+    margin: 0 0 40px 25%;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom-color: transparent;
+    background-color: rgb(110, 27, 110);
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 3px gray;
+    transition: background-color 1s,color 1s;
+}
+
+.enter:hover{
+    border-bottom: 1px solid rgb(150, 0, 150);
+    width: 65%;
+}
+
+.valider:hover{
+    background-color: rgb(92, 31, 150);
+    color: white;
+}
+
+/*----------------------------------- Modify Page -----------------------------------*/
+
+#modifyP{
+    display: none;
+}
+
+#slc{
+    width: 200px;
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(92, 31, 150);
+    border: 1px solid rgb(92, 31, 150);
+    font-weight: bold;
+    -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.delete{
+    font-variant: small-caps;
+    width: 20%;
+    float: right;
+    display: block;
+    margin: -5% 20% 0 0;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom-color: transparent;
+    background-color: rgb(110, 27, 110);
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 3px gray;
+    transition: background-color 1s,color 1s;
+}

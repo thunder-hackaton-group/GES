@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contenu{
+    width: 30%;
+    margin: 100px 0 0 35%;
+}
+
+header h1 span{
+    color : rgb(150, 0, 150);
+}
+
+.line{
+    width: 100%;
+    border: 2px solid rgb(150, 0, 150);
+}
+
+/* ------------------------------------- Fin en-tête ----------------------------------------- */
+
+.formulaire{
+    padding-top: 30px;
+    box-shadow: 3px 3px 5px grey;
+    min-height: 100%;
+}
+
+#error{
+    display: inline-block;
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+    color: crimson;
+    margin: 20px 0 20px 25%;
+    visibility: hidden;
+}
+
+div form label{
+    margin: 30px 0 0 20%;
+    display: block;
+    font-size: 12px;
+    color: rgb(90, 90, 90);
+}
+
+div form input {
+    margin: 10px 0 10px 25%;
+    width: 50%;
+    padding: 8px;
+    font-size: 16px;
+    border-color: transparent;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    position: relative;
+    color: rgb(150, 0, 150);
+    caret-color: rgb(150, 0, 150);
+    transition: border 1s ease;
+}
+
+div form input:hover{
+    border-bottom: 1.5px solid rgb(150, 0, 150);
+}
+
+.valider{
+    display: inline-block;
+    position: relative;
+    font-size: 17px;
+    color:whitesmoke;
+    font-weight: bold;
+    width: 100%;
+    border-color:transparent;
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(150, 0, 150);
+    cursor: pointer;
+    transition: background-color 1s ease,color 1s;
+}
+
+.valider:hover{
+    background-color: rgb(92, 31, 150);
+    color: white;
+}
