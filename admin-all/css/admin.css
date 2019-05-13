@@ -24,7 +24,7 @@ nav{
     box-shadow: 3px 3px 4px grey;
     min-height: 100%;
     max-height: 100%;
-    padding: 0 0 20px 0;
+    padding: 0;
 }
 
 nav header{
@@ -69,6 +69,14 @@ nav header h1{
     filter: blur(0);
 }
 
+.btD{
+    background: linear-gradient(rgb(150, 0, 150), rgb(46, 46, 46));
+    padding: 15px 0 15px 30px;
+    color: white;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+}
+
 /* ---------------------------- Page du contenu ---------------------------------------- */
 
 /* ---------------------------- Ajout Page ------------------------------------------*/
@@ -83,10 +91,15 @@ nav header h1{
     border-radius : 10px;
     max-height: 100%;
     min-height: auto;
+    z-index: 10;
 }
 
 #ajoutP{
     display: block;
+}
+
+#ajoutP, #modifyP{
+    transition: opacity 0.5s;
 }
 
 .content #ajoutP form .form-left,.content #modifyP form .form-left{

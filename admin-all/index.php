@@ -58,6 +58,7 @@
                     <input type="password" name="password" title="Mot de passe" id="mdp" required="required"/>
                     <br>
                     <?php
+                    //Affiche Erreur s'il y a erreur d'authentification ou faute d'intrusion
                         if(isset($_GET['error'])){
                             echo '<p id="error" style="visibility:visible">Erreur d\'authentification</p>';
                         }

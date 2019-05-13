@@ -15,17 +15,25 @@ var link1 = ID('link-1'),
     }
 
 var clique1 = function(){
-    modify.style.display = 'none';
-    ajout.style.display = 'block';
-    link1.style.borderBottom = '2px solid rgb(110, 27, 110)';
-    link2.style.borderBottomColor = 'transparent';
+    modify.style.opacity = 0;
+    setTimeout(function(){
+        modify.style.display = 'none';
+        ajout.style.display = 'block';
+        ajout.style.opacity = 1;
+        link1.style.borderBottom = '2px solid rgb(110, 27, 110)';
+        link2.style.borderBottomColor = 'transparent';
+    },500);
 };
 
 var clique2 = function(){
-    ajout.style.display = 'none';
-    modify.style.display = 'block';
-    link2.style.borderBottom = '2px solid rgb(110, 27, 110)';
-    link1.style.borderBottomColor = 'transparent';
+    ajout.style.opacity = 0;
+    setTimeout(function(){
+        ajout.style.display = 'none';
+        modify.style.display = 'block';
+        modify.style.opacity = 1;
+        link2.style.borderBottom = '2px solid rgb(110, 27, 110)';
+        link1.style.borderBottomColor = 'transparent';
+    },500);
 };
 
 addEvent(link1, 'click', clique1);
