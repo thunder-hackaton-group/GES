@@ -2,7 +2,7 @@
 
 <form method="post" action="analyseLogin.php">
     <p>
-        <label for="identifiant">Nom : </label>
+        <label for="identifiant">Email ou identifiant : </label>
         <input type="text" name="identifiant" placeholder="Ex : cgrace5" id="identifiant" required />
     </p>
 

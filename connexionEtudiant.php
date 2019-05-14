@@ -16,15 +16,25 @@
         die('Erreur : ' . $e->getMessage());
     }
 
-    $requeteVerification = $bdd->query('SELECT nom_identifiant_etudiant FROM identifiant_etudiant');
-    while ($donneeVerification = $requeteVerification->fetch())
+    $requeteVerificationEtudiant = $bdd->query('SELECT nom_identifiant_etudiant FROM identifiant_etudiant');
+    while ($donneeVerification = $requeteVerificationEtudiant->fetch())
     {
         if ($donneeVerification['0'] == $_SESSION['nom_identifiant'])
         {
             $redondanceIdentifiant = TRUE;
         }
     }
-    $requeteVerification->closeCursor();
+    $requeteVerificationEtudiant->closeCursor();
+
+    $requeteVerificationProfesseur = $bdd->query('SELECT nom_identifiant_professeur FROM identifiant_professeur');
+    while ($donneeVerification = $requeteVerificationProfesseur->fetch())
+    {
+        if ($donneeVerification['0'] == $_SESSION['nom_identifiant'])
+        {
+            $redondanceIdentifiant = TRUE;
+        }
+    }
+    $requeteVerificationProfesseur->closeCursor();
 
     if ($redondanceIdentifiant)
     {
@@ -32,11 +42,13 @@
     }
     else
     {
-        $requeteEtudiant = $bdd->prepare('INSERT INTO etudiant (nom_etudiant, prenom_etudiant, adresse_etudiant, contact_etudiant, sexe_etudiant, naissance_etudiant, categorie_etudiant, classe_etudiant, numero_etudiant, session_etudiant)
-                                          VALUES (:nom_etudiant, :prenom_etudiant, :adresse_etudiant, :contact_etudiant, :sexe_etudiant, :naissance_etudiant, :categorie_etudiant, :classe_etudiant, :numero_etudiant, :session_etudiant)');
+        $requeteEtudiant = $bdd->prepare('INSERT INTO etudiant (nom_etudiant, prenom_etudiant, email_etudiant, ville_etudiant,  adresse_etudiant, contact_etudiant, sexe_etudiant, naissance_etudiant, categorie_etudiant, classe_etudiant, numero_etudiant, session_etudiant)
+                                          VALUES (:nom_etudiant, :prenom_etudiant, :email_etudiant, :ville_etudiant, :adresse_etudiant, :contact_etudiant, :sexe_etudiant, :naissance_etudiant, :categorie_etudiant, :classe_etudiant, :numero_etudiant, :session_etudiant)');
         $requeteEtudiant->execute(array(
             'nom_etudiant' => $_SESSION['nom_etudiant'],
             'prenom_etudiant' => $_SESSION['prenom_etudiant'],
+            'email_etudiant' => $_SESSION['email_etudiant'],
+            'ville_etudiant' => $_SESSION['ville_etudiant'],
             'adresse_etudiant' => $_SESSION['adresse_etudiant'],
             'contact_etudiant' => $_SESSION['contact_etudiant'],
             'sexe_etudiant' => $_SESSION['sexe_etudiant'],
@@ -49,9 +61,9 @@
         $requeteEtudiant->closeCursor();
         
         $requeteSecondaire = $bdd->query('SELECT id_etudiant
-                                        FROM etudiant
-                                        WHERE nom_etudiant = \'' . $_SESSION['nom_etudiant'] . '\'
-                                        AND prenom_etudiant = \'' . $_SESSION['prenom_etudiant'] . '\'');
+                                          FROM etudiant
+                                          WHERE nom_etudiant = \'' . $_SESSION['nom_etudiant'] . '\'
+                                          AND prenom_etudiant = \'' . $_SESSION['prenom_etudiant'] . '\'');
 
         if ($donneeSecondaire = $requeteSecondaire->fetch())
         {  
@@ -62,7 +74,7 @@
         $bdd->exec('INSERT INTO identifiant_etudiant (nom_identifiant_etudiant, mdp_identifiant_etudiant, id_etudiant)
                     VALUES (\'' . $_SESSION['nom_identifiant'] . '\', \'' . $_SESSION['mdp_identifiant'] . '\', '. $id_etudiant .')');
         session_destroy();
-        echo('L\'ajout de l\'étudiant est terminé avec succès');
+        echo("L'ajout de l'étudiant est terminé avec succès");
     }
 ?>
 <p>Pour revenir vers la page d'ajout, <a href="ajoutEtudiant.php">Cliquez ici</a></p>

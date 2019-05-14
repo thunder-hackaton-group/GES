@@ -12,6 +12,23 @@
     </p>
 
     <p>
+        <label for="email_etudiant">Adresse email : </label>
+        <input type="email" name="email_etudiant" placeholder="Ex : etudiant@email.com" id="email_etudiant" />
+    </p>
+
+    <p>
+        <label for="ville_etudiant">Ville : </label>
+        <select name="ville_etudiant" id="ville_etudiant">
+            <option value="Antananarivo">Antananarivo</option>
+            <option value="Toamasina">Toamasina</option>
+            <option value="Mahajanga">Mahajanga</option>
+            <option value="Antsiranana">Antsiranana</option>
+            <option value="Toliara">Toliara</option>
+            <option value="Fianarantsoa">Fianarantsoa</option>
+        </select>
+    </p>
+
+    <p>
         <label for="adresse_etudiant">Adresse : </label>
         <input type="text" name="adresse_etudiant" placeholder="Ex : Lot IVB 17 Andravoahangy" id="adresse_etudiant" required />
     </p>
@@ -24,8 +41,8 @@
     <p>
         <label for="sexe_etudiant">Sexe : </label>
         <select name="sexe_etudiant" id="sexe_etudiant">
-            <option value="masculin">Masculin</option>
-            <option value="feminin">Féminin</option>
+            <option value="Masculin">Masculin</option>
+            <option value="Féminin">Féminin</option>
         </select>
     </p>
 
@@ -37,31 +54,31 @@
     <p>
         <label for="categorie_etudiant">Catégorie : </label>
         <select name="categorie_etudiant" id="categorie_etudiant">
-            <option value="primaire">Primaire</option>
-            <option value="college">Collège</option>
-            <option value="lycee">Lycée</option>
+            <option value="Primaire">Primaire</option>
+            <option value="Collège">Collège</option>
+            <option value="Lycée">Lycée</option>
         </select>
     </p>
 
     <p>
         <label for="classe_etudiant">Classe : </label>
         <select name="classe_etudiant" id="classe_etudiant">
-            <option value="12e">12ème</option>
-            <option value="11e">11ème</option>
-            <option value="10e">10ème</option>
-            <option value="9e">9ème</option>
-            <option value="8e">8ème</option>
-            <option value="7e">7ème</option>
-            <option value="6e">6ème</option>
-            <option value="5e">5ème</option>
-            <option value="4e">4ème</option>
-            <option value="3e">3ème</option>
+            <option value="12ème">12ème</option>
+            <option value="11ème">11ème</option>
+            <option value="10ème">10ème</option>
+            <option value="9ème">9ème</option>
+            <option value="8ème">8ème</option>
+            <option value="7ème">7ème</option>
+            <option value="6ème">6ème</option>
+            <option value="5ème">5ème</option>
+            <option value="4ème">4ème</option>
+            <option value="3ème">3ème</option>
             <option value="2nd">2nd</option>
-            <option value="1ereL">1ère L</option>
-            <option value="1ereL">1ère S</option>
-            <option value="TA">Terminale A</option>
-            <option value="TC">Terminale C</option>
-            <option value="TD">Terminale D</option>
+            <option value="1ere L">1ère L</option>
+            <option value="1ere L">1ère S</option>
+            <option value="Terminale A">Terminale A</option>
+            <option value="Terminale C">Terminale C</option>
+            <option value="Terminale D">Terminale D</option>
         </select>
     </p>
 
@@ -90,6 +107,5 @@
         </select>
     </p>
 
-    <!-- <script src="ajoutEtudiant.js"></script> -->
     <input type="submit" value="Valider" />
 </form>

@@ -5,6 +5,8 @@
 
     $_SESSION['nom_etudiant'] = $_POST['nom_etudiant'];
     $_SESSION['prenom_etudiant'] = $_POST['prenom_etudiant'];
+    $_SESSION['email_etudiant'] = $_POST['email_etudiant'];
+    $_SESSION['ville_etudiant'] = $_POST['ville_etudiant'];
     $_SESSION['adresse_etudiant'] = $_POST['adresse_etudiant'];
     $_SESSION['contact_etudiant'] = $contact_etudiant;
     $_SESSION['sexe_etudiant'] = $_POST['sexe_etudiant'];
@@ -16,6 +18,7 @@
 
     $redondanceNom = FALSE;
     $redondanceContact = FALSE;
+    $redondanceEmail = FALSE;
 
     try
     {
@@ -26,8 +29,8 @@
         die('Erreur : ' . $e->getMessage());
     }
 
-    $requeteVerification = $bdd->query('SELECT * FROM etudiant');
-    while ($donneeVerification = $requeteVerification->fetch())
+    $requeteVerificationEtudiant = $bdd->query('SELECT * FROM etudiant');
+    while ($donneeVerification = $requeteVerificationEtudiant->fetch())
     {
         $nom_etudiant = $donneeVerification['nom_etudiant'];
         $prenom_etudiant = $donneeVerification['prenom_etudiant'];
@@ -37,12 +40,43 @@
             $redondanceNom = TRUE;
         }
         
-        if ($contact_etudiant == $donneeVerification['contact_etudiant'])
+        if ($donneeVerification['contact_etudiant'] == $contact_etudiant)
         {
             $redondanceContact = TRUE;
         }
+
+        if ($_SESSION['email_etudiant'] != "")
+        {
+            if ($donneeVerification['email_etudiant'] == $_SESSION['email_etudiant'])
+            {
+                $redondanceEmail = TRUE;
+            }
+        }
     }
-    $requeteVerification->closeCursor();
+    $requeteVerificationEtudiant->closeCursor();
+
+    $requeteVerificationProfesseur = $bdd->query('SELECT * FROM professeur');
+    while ($donneeVerification = $requeteVerificationProfesseur->fetch())
+    {
+        if ($donneeVerification['contact_professeur'] == $contact_etudiant)
+        {
+            $redondanceContact = TRUE;
+        }
+
+        if ($_SESSION['email_etudiant'] != "")
+        {
+            if ($donneeVerification['email_professeur'] == $_SESSION['email_etudiant'])
+            {
+                $redondanceEmail = TRUE;
+            }
+        }
+    }
+    $requeteVerificationProfesseur->closeCursor();
+
+    if ($_SESSION['email_etudiant'] == "")
+    {
+        $_SESSION['email_etudiant'] = "NULL";
+    }
 
     if ($contact_etudiant == 0)
     {
@@ -58,16 +92,23 @@
         {
             echo("Désolé mais le numéro de téléphone est déjà assignée avec une autre personne"); ?> <br/> <?php
         }
+
+        if ($redondanceEmail)
+        {
+            echo("Pardon mais l'adresse email est déjà prise par un autre utilisateur"); ?> <br/> <?php
+        }
     }
     else
     {
         if ($_POST['categorie_etudiant'] == 'primaire')
         {
-            $requeteEtudiant = $bdd->prepare('INSERT INTO etudiant (nom_etudiant, prenom_etudiant, adresse_etudiant, contact_etudiant, sexe_etudiant, naissance_etudiant, categorie_etudiant, classe_etudiant, numero_etudiant, session_etudiant)
-                                              VALUES (:nom_etudiant, :prenom_etudiant, :adresse_etudiant, :contact_etudiant, :sexe_etudiant, :naissance_etudiant, :categorie_etudiant, :classe_etudiant, :numero_etudiant, :session_etudiant)');
+            $requeteEtudiant = $bdd->prepare('INSERT INTO etudiant (nom_etudiant, prenom_etudiant, email_etudiant, ville_etudiant,  adresse_etudiant, contact_etudiant, sexe_etudiant, naissance_etudiant, categorie_etudiant, classe_etudiant, numero_etudiant, session_etudiant)
+                                              VALUES (:nom_etudiant, :prenom_etudiant, :email_etudiant, :ville_etudiant, :adresse_etudiant, :contact_etudiant, :sexe_etudiant, :naissance_etudiant, :categorie_etudiant, :classe_etudiant, :numero_etudiant, :session_etudiant)');
             $requeteEtudiant->execute(array(
                 'nom_etudiant' => $_SESSION['nom_etudiant'],
                 'prenom_etudiant' => $_SESSION['prenom_etudiant'],
+                'email_etudiant' => $_SESSION['email_etudiant'],
+                'ville_etudiant' => $_SESSION['ville_etudiant'],
                 'adresse_etudiant' => $_SESSION['adresse_etudiant'],
                 'contact_etudiant' => $_SESSION['contact_etudiant'],
                 'sexe_etudiant' => $_SESSION['sexe_etudiant'],
