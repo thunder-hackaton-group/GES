@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Index</title>
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="css/uikit.min.css" />
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+    </head>
+    <body>
+        <div class="uk-height-large uk-background-cover uk-light"
+             data-src="images/iback.jpg"  uk-img>
+
+             <div class="contenu">
+
+                <nav class="uk-navbar-container" uk-navbar>
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                                <li class="uk-active"><a id="grad" href="#"><img src="images/grad.png"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="uk-navbar-right">
+                        <ul class="uk-navbar-nav">
+                            <li>
+                                    <a id="menu" href="#"><img src="images/menu.png" ></a>
+                                    <div class="uk-navbar-dropdown">
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <li class="uk-active"><a href="#">Active</a></li>
+                                            <li><a href="#">Item</a></li>
+                                            <li><a href="#">Item</a></li>
+                                        </ul>
+                                    </div>
+                            </li>
+                            <li>
+                                <a id="magnifier" href="#"><img src="images/magnifier.png" >
+                                    <div class="uk-navbar-dropdown">
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            <form>
+                                                <div class="uk-margin">
+                                                    <div class="uk-inline">
+                                                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
+                                                        <input class="uk-input" type="text" placeholder="Rechercher">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+             <button id="bouton">Se connecter</button>
+        </div>
+
+        <div class="uk-flex uk-flex-left@xl uk-flex-stretch my-container  ">
+                <div class="uk-card uk-card-default uk-card-body uk-flex-none">Ecoles <br> liste des écoles 
+                <br>zeihtzpefjze <br>zepihtzpiefqzpe</div>
+        </div>
+        <div class="uk-flex uk-flex-center@l uk-flex-stretch my-container">
+            <div class="uk-card uk-card-default uk-width-1-2@m">
+                <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                    <img class="uk-border-circle" width="100" height="100" src="images/ex.png">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Titre</h3>
+                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00"></time></p>
+                            </div>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+                <div class="uk-card-footer">
+                    <a href="#" class="uk-button uk-button-text">Read more</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="uk-flex uk-flex-right uk-flex-stretch my-container ">
+            <div class="uk-card uk-card-default uk-card-body uk-card-hover uk-flex-none">
+                <fieldset class="uk-fieldset">
+                    <legend class="uk-legend">Toutes les publications</legend>
+                    <div class="uk-margin">
+                        <select class="uk-select" name="publication" id="publication">
+
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+
+        <div style="height:200vh"></div>
+
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>   
+    </body>
+</html>

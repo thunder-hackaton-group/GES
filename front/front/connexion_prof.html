@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/uikit.css" />
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GES : Accueil Etablissement</title>
+    </head>
+    <body>
+            <nav class="uk-navbar-container " uk-navbar>
+                    <div class="uk-navbar-left">
+                            <ul class="uk-navbar-nav">
+                                    <li class="uk-active"><a id="grad" href="#"><img src="images/grad-orange.png"></a></li>
+                            </ul>
+                    </div>
+
+                    <div class="uk-navbar-right ">
+                            <ul class="uk-navbar-nav ">
+                                <li>
+                                        <a   id="menu" href="#"><img src="images/menu-orange.png" ></a>
+                                        <div class="uk-navbar-dropdown">
+                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                <li class="uk-active"><a href="#">Active</a></li>
+                                                <li><a href="#">Item</a></li>
+                                                <li><a href="#">Item</a></li>
+                                            </ul>
+                                        </div>
+                                </li>
+                                <li>
+                                        <a  id="magnifier" href="#"><img src="images/magnifier-orange.png" >
+                                              <div class="uk-navbar-dropdown">
+                                                      <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                              <form>
+                                                                <div class="uk-margin">
+                                                                        <div class="uk-inline">
+                                                                                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
+                                                                                <input class="uk-input" type="text" placeholder="Rechercher">
+                                                                        </div>
+                                                                </div>
+                                                              </form>
+                                                      </ul>
+                                              </div>  
+                                        </a>
+                                </li>
+                            </ul>
+                    </div>
+            </nav>
+
+            <h1>Création identifiant</h1>
+
+            <div class="uk-flex uk-flex-center uk-flex-stretch my-container">
+                    <div class="uk-card uk-card-default uk-card-body uk-flex-none">
+
+                            <form method="post" action="connexionEtudiant.php">
+
+                                    <fieldset class="uk-fieldset">
+                                        <legend class="uk-legend">Identifiant</legend>
+                                        <div class="uk-margin">
+                                                <div class="uk-inline">
+                                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                                    <input class="uk-input uk-form-width-large" type="text" name="nom_identifiant_professeur" placeholder="Ex : esti003" id="nom_identifiant_professeur" required />
+                                                </div>
+                                    </fieldset>
+
+                                    <fieldset class="uk-fieldset">
+                                        <legend class="uk-legend">Mot de passe </legend>
+                                        <div class="uk-margin">
+                                                <div class="uk-inline">
+                                                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                                    <input class="uk-input uk-form-width-large" type="password" name="mdp_identifiant_professeur" id="mdp_identifiant_professeur" required />
+                                                </div>
+                                    </fieldset>
+
+                                    <p uk-margin>
+                                            <button class="uk-button uk-button-danger">Valider</button>
+                                    </p>
+
+
+
+                                   
+                            </form>
+                    </div>
+            </div>
+
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+    </body>
+</html>
