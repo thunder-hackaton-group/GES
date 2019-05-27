@@ -1,0 +1,13 @@
+CREATE TABLE `etablissement` (
+  `id_etablissement` varchar(50) NOT NULL,
+  `nom_etablissement` varchar(50) NOT NULL,
+  `adresse_etablissement` varchar(255) NOT NULL,
+  `contact_etablissement` varchar(50) NOT NULL,
+  `slogan_etablissement` varchar(255) NOT NULL,
+  `date_ajout_etablissement` date NOT NULL,
+  `email_etablissement` varchar(255) NOT NULL,
+  `password_etablissement` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_etablissement`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO etablissement VALUES (1234567890, 'ESTI', '3 rue Pasteur, Immeuble CCIA  Antanimena - Antananarivo', '+261 20 22 248 74', 'Ensemble nous réussirons', '2019-05-17', 'esti@esti.mg', 'estiantanimena');

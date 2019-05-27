@@ -1,0 +1,6 @@
+CREATE TABLE `admin_site` (
+  `id_maitre` int(11) NOT NULL AUTO_INCREMENT,
+  `auth_maitre` varchar(200) NOT NULL,
+  `mdp_maitre` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_maitre`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

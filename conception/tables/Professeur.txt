@@ -1,0 +1,13 @@
+CREATE TABLE `professeur` (
+	`id_professeur` INT NOT NULL AUTO_INCREMENT ,
+	`nom_professeur` VARCHAR(255) NOT NULL ,
+	`prenom_professeur` VARCHAR(255) NOT NULL ,	
+	`email_professeur` VARCHAR(255) NOT NULL ,
+	`ville_professeur` VARCHAR(255) NOT NULL ,
+	`adresse_professeur` VARCHAR(255) NOT NULL ,
+	`contact_professeur` INT NOT NULL ,
+	`sexe_professeur` VARCHAR(255) NOT NULL ,
+	`naissance_professeur` VARCHAR(255) NOT NULL ,
+	`session_professeur` VARCHAR(255) NOT NULL ,
+	PRIMARY KEY (`id_professeur`)
+) ENGINE=MyISAM AUTO_INCREMENT = 1000000001 DEFAULT CHARSET=utf8;

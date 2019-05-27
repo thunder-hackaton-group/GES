@@ -1,0 +1,19 @@
+CREATE TABLE `etudiant` (
+	`id_etudiant` INT NOT NULL AUTO_INCREMENT ,
+	`nom_etudiant` VARCHAR(255) NOT NULL ,
+	`prenom_etudiant` VARCHAR(255) NOT NULL ,	
+	`email_etudiant` VARCHAR(255) NULL DEFAULT NULL ,
+	`ville_etudiant` VARCHAR(255) NOT NULL ,
+	`adresse_etudiant` VARCHAR(255) NOT NULL ,
+	`contact_etudiant` INT NOT NULL ,
+	`sexe_etudiant` VARCHAR(255) NOT NULL ,
+	`naissance_etudiant` VARCHAR(255) NOT NULL ,
+	`categorie_etudiant` VARCHAR(255) NOT NULL ,
+	`classe_etudiant` VARCHAR(255) NOT NULL ,
+	`numero_etudiant` INT NOT NULL ,
+	`session_etudiant` VARCHAR(255) NOT NULL ,
+	`id_etablissement` VARCHAR(50) NOT NULL ,
+	PRIMARY KEY (`id_etudiant`),
+	FOREIGN KEY (id_etablissement) REFERENCES etablissement(id_etablissement)
+) ENGINE=MyISAM AUTO_INCREMENT = 2000000001 DEFAULT CHARSET=utf8;
+
