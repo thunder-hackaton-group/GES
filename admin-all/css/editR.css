@@ -1,0 +1,71 @@
+#rr{
+    z-index: 8888;
+    width: 100%;
+    height: 600px;
+    position: fixed;
+    display: none;
+}
+
+#rootEdit{
+    position: absolute;
+    display: inline-block;
+    left:32.5%;
+    top:100px;
+    background-color: white;
+    width: 0;
+    height: 0;
+    z-index: 99999;
+    max-height: 350px;
+    transition: width 1s,height 1s;
+}
+
+h3{
+    background: -moz-linear-gradient(to right, rgb(110, 27, 110),rgb(51, 6, 51));
+    background: -o-linear-gradient(to right, rgb(110, 27, 110),rgb(51, 6, 51));
+    background: -webkit-linear-gradient(to right, ,rgb(51, 6, 51));
+    width: 100%;
+    color: white;
+    margin: 0;
+    padding-top: 10px;
+    height: 40px;
+}
+
+#rootF,h3{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.upd{
+    display: block;
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom-color: transparent;
+    background-color: rgb(110, 27, 110);
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 3px gray;
+    transition: background-color 1s,color 1s;
+}
+
+.editing{
+    margin: 5px 0 30px 0;
+    padding: 10px;
+    width: 60%;
+    border-color: transparent;
+    border-bottom: 1px solid rgb(129, 129, 129);
+    caret-color: blueviolet;
+    transition: border 1s ease,width 1s;
+}
+
+.editing:hover{
+    border-bottom-color: blueviolet;
+    width: 65%;
+}
+.rL{
+    display: inline-block;
+    position: relative;
+    margin: 20px 0 0 0;
+    color: rgba(54, 14, 54, 0.5)
+}

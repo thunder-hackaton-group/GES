@@ -1,6 +1,6 @@
 <?php
-        $requeteProfesseur = $bdd->prepare('INSERT INTO professeur (nom_professeur, prenom_professeur, email_professeur, ville_professeur, adresse_professeur, contact_professeur, sexe_professeur, naissance_professeur, session_professeur)
-                                            VALUES (:nom_professeur, :prenom_professeur, :email_professeur, :ville_professeur, :adresse_professeur, :contact_professeur, :sexe_professeur, :naissance_professeur, :session_professeur)');
+        $requeteProfesseur = $bdd->prepare('INSERT INTO professeur (nom_professeur, prenom_professeur, email_professeur, ville_professeur, adresse_professeur, contact_professeur, sexe_professeur, naissance_professeur, session_professeur, date_ajout_professeur)
+                                            VALUES (:nom_professeur, :prenom_professeur, :email_professeur, :ville_professeur, :adresse_professeur, :contact_professeur, :sexe_professeur, :naissance_professeur, :session_professeur, NOW())');
         $requeteProfesseur->execute(array(
             'nom_professeur' => $_SESSION['nom_professeur'],
             'prenom_professeur' => $_SESSION['prenom_professeur'],

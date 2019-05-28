@@ -33,7 +33,7 @@
 
     $requeteLoginEtudiant->closeCursor();
     $requeteLoginProfesseur->closeCursor();
-    
+
     // ========================= Connexion par adresse email =========================
     $requeteLoginEtudiant = $bdd->query('SELECT id_etudiant, email_etudiant FROM etudiant');
 
@@ -102,11 +102,91 @@
     {
         if ($identifiant == 'etudiant')
         {
-            
+            $controlEtudiant = FALSE;
+            $controlEtudiantMail = FALSE;
+            // ========== Vérification à partir de l'adresse email ==========
+                $requeteLoginSession = $bdd->query('SELECT * FROM etudiant
+                                                    WHERE email_etudiant = \'' . htmlspecialchars($_POST['mail']) . '\'');
+
+                if ($donneesLogin = $requeteLoginSession->fetch())
+                {
+                    if ($donneesLogin['email_etudiant'] == $_POST['mail'])
+                    {
+                        $requeteLoginSession = $bdd->query('SELECT * FROM etudiant
+                                                            WHERE email_etudiant = \'' . htmlspecialchars($_POST['mail']) . '\'');
+
+                        if ($donneesLogin = $requeteLoginSession->fetch())
+                        {
+                            setcookie('id_connecter', $donneesLogin['id_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('nom_connecter', $donneesLogin['nom_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('prenom_connecter', $donneesLogin['prenom_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('email_connecter', $donneesLogin['email_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('ville_connecter', $donneesLogin['ville_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('adresse_connecter', $donneesLogin['adresse_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('contact_connecter', $donneesLogin['contact_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('sexe_connecter', $donneesLogin['sexe_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('naissance_connecter', $donneesLogin['naissance_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('categorie_connecter', $donneesLogin['categorie_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('classe_connecter', $donneesLogin['classe_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('numero_connecter', $donneesLogin['numero_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('session_connecter', $donneesLogin['session_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('date_ajout_connecter', $donneesLogin['date_ajout_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('id_etab_connecter', $donneesLogin['id_etablissement'] , time() + 1*24*3600, '/', null, false, true);
+                        }
+                        $requeteLoginSession->closeCursor();
+                        $controlEtudiantMail = TRUE;
+                        $controlEtudiant = TRUE;
+                    }
+                }
+                $requeteLoginSession->closeCursor();
+
+            // ========== Vérification à partir de l'identifiant ==========
+                if ($controlEtudiant == FALSE)
+                {
+                    $requeteLoginSession = $bdd->query('SELECT *
+                                                        FROM identifiant_etudiant
+                                                        WHERE nom_identifiant_etudiant = \'' . htmlspecialchars($_POST['mail']) . '\'');
+
+                    if ($donneesLogin = $requeteLoginSession->fetch())
+                    {
+                        $controlEtudiant = TRUE;
+                    }
+                    $requeteLoginSession->closeCursor();
+                }
+
+            // ========== Assignation des cookies ==========
+            if (($controlEtudiant == TRUE) && ($controlEtudiantMail == FALSE))
+            {
+                $requeteLoginSession = $bdd->query('SELECT * FROM etudiant, identifiant_etudiant
+                                                    WHERE identifiant_etudiant.nom_identifiant_etudiant = \'' . htmlspecialchars($_POST['mail']) . '\'');
+
+                if ($donneesLogin = $requeteLoginSession->fetch())
+                {
+                    setcookie('id_connecter', $donneesLogin['id_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('nom_connecter', $donneesLogin['nom_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('prenom_connecter', $donneesLogin['prenom_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('email_connecter', $donneesLogin['email_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('ville_connecter', $donneesLogin['ville_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('adresse_connecter', $donneesLogin['adresse_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('contact_connecter', $donneesLogin['contact_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('sexe_connecter', $donneesLogin['sexe_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('naissance_connecter', $donneesLogin['naissance_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('categorie_connecter', $donneesLogin['categorie_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('classe_connecter', $donneesLogin['classe_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('numero_connecter', $donneesLogin['numero_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('session_connecter', $donneesLogin['session_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('date_ajout_connecter', $donneesLogin['date_ajout_etudiant'] , time() + 1*24*3600, '/', null, false, true);
+                            setcookie('id_etab_connecter', $donneesLogin['id_etablissement'] , time() + 1*24*3600, '/', null, false, true);
+                }
+                $requeteLoginSession->closeCursor();
+            }
+
+            header('location: ../../cote-etudiant/view/accueilEtudiant.php');
         }
         elseif ($identifiant == 'professeur')
         {
             $controlProfesseur = FALSE;
+            $controlProfesseurMail = FALSE;
             // ========== Vérification à partir de l'adresse email ==========
                 $requeteLoginSession = $bdd->query('SELECT * FROM professeur
                                                     WHERE email_professeur = \'' . htmlspecialchars($_POST['mail']) . '\'');
@@ -115,7 +195,26 @@
                 {
                     if ($donneesLogin['email_professeur'] == $_POST['mail'])
                     {
-                        $controlProfesseur = TRUE;
+                      $requeteLoginSession = $bdd->query('SELECT * FROM professeur
+                                                          WHERE email_professeur = \'' . htmlspecialchars($_POST['mail']) . '\'');
+
+                      if ($donneesLogin = $requeteLoginSession->fetch())
+                      {
+                          setcookie('id_connecter', $donneesLogin['id_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('nom_connecter', $donneesLogin['nom_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('prenom_connecter', $donneesLogin['prenom_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('email_connecter', $donneesLogin['email_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('ville_connecter', $donneesLogin['ville_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('adresse_connecter', $donneesLogin['adresse_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('contact_connecter', $donneesLogin['contact_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('sexe_connecter', $donneesLogin['sexe_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('naissance_connecter', $donneesLogin['naissance_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('session_connecter', $donneesLogin['session_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                          setcookie('date_ajout_connecter', $donneesLogin['date_ajout_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                      }
+                      $requeteLoginSession->closeCursor();
+                      $controlProfesseurMail = TRUE;
+                      $controlProfesseur = TRUE;
                     }
                 }
                 $requeteLoginSession->closeCursor();
@@ -126,20 +225,20 @@
                     $requeteLoginSession = $bdd->query('SELECT *
                                                         FROM identifiant_professeur
                                                         WHERE nom_identifiant_professeur = \'' . htmlspecialchars($_POST['mail']) . '\'');
-                    
+
                     if ($donneesLogin = $requeteLoginSession->fetch())
                     {
                         $controlProfesseur = TRUE;
                     }
                     $requeteLoginSession->closeCursor();
                 }
-                
+
             // ========== Assignation des cookies ==========
-            if ($controlProfesseur == TRUE)
+            if (($controlProfesseur == TRUE) && ($controlProfesseurMail == FALSE))
             {
-                $requeteLoginSession = $bdd->query('SELECT * FROM professeur
-                                                    WHERE email_professeur = \'' . htmlspecialchars($_POST['mail']) . '\'');
-                
+                $requeteLoginSession = $bdd->query('SELECT * FROM professeur, identifiant_professeur
+                                                    WHERE identifiant_professeur.nom_identifiant_professeur = \'' . htmlspecialchars($_POST['mail']) . '\'');
+
                 if ($donneesLogin = $requeteLoginSession->fetch())
                 {
                     setcookie('id_connecter', $donneesLogin['id_professeur'] , time() + 1*24*3600, '/', null, false, true);
@@ -152,7 +251,7 @@
                     setcookie('sexe_connecter', $donneesLogin['sexe_professeur'] , time() + 1*24*3600, '/', null, false, true);
                     setcookie('naissance_connecter', $donneesLogin['naissance_professeur'] , time() + 1*24*3600, '/', null, false, true);
                     setcookie('session_connecter', $donneesLogin['session_professeur'] , time() + 1*24*3600, '/', null, false, true);
-                    //setcookie('date_ajout_connecter', $donneesLogin['date_ajout_professeur'] , time() + 1*24*3600, '/', null, false, true);
+                    setcookie('date_ajout_connecter', $donneesLogin['date_ajout_professeur'] , time() + 1*24*3600, '/', null, false, true);
                 }
                 $requeteLoginSession->closeCursor();
             }
@@ -174,7 +273,7 @@
                 setcookie('slogan_connecter', $donneesLogin['slogan_etablissement'] , time() + 1*24*3600, '/', null, false, true);
                 setcookie('date_ajout_connecter', $donneesLogin['date_ajout_etablissement'] , time() + 1*24*3600, '/', null, false, true);
             }
-            
+
             $requeteLoginSession->closeCursor();
 
             header('location: ../../admin-etab/view/accueilEtablissement.php');

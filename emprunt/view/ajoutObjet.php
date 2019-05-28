@@ -44,10 +44,10 @@
                     <fieldset class="uk-fieldset">
                         <legend class="uk-legend">Etat</legend>
                             <div class="uk-margin">
-                                <input class="uk-range" type="range" name="etat_objet" id="etat_objet" value="1" min="1" max="10" step="1">
+                                <input class="uk-range" type="range" name="etat_objet" id="etat_objet" value="10" min="1" max="10" step="1">
                             </div>
                     </fieldset>
-                
+
                     <input class="bouton" type="submit" value="Valider" />
                 </form>
             </div>

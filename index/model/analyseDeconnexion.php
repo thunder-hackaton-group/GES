@@ -16,6 +16,5 @@
     setcookie('date_ajout_connecter', null, -1, '/');
     setcookie('id_etab_connecter', null, -1, '/');
 
-    header('location: ../../admin-etab/view/accueilEtablissement.php');
     header('location: ../../index.php');
 ?>
