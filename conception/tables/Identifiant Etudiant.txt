@@ -1,0 +1,9 @@
+CREATE TABLE Identifiant_Etudiant(
+        id_connexion_etudiant Int NOT NULL AUTO_INCREMENT,
+        nom_identifiant_etudiant   Varchar (255) NOT NULL ,
+        mdp_identifiant_etudiant   Varchar (255) NOT NULL ,
+        id_etudiant       Int NOT NULL
+	,CONSTRAINT Identifiant_Etudiant_PK PRIMARY KEY (id_connexion_etudiant)
+
+	,CONSTRAINT Identifiant_Etudiant_Etudiant_FK FOREIGN KEY (id_etudiant) REFERENCES Etudiant(id_etudiant)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
