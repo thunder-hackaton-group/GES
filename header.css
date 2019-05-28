@@ -1,0 +1,17 @@
+.orange{
+    background-image: linear-gradient(to right,rgb(206, 86, 6),rgb(109, 13, 109)) !important;
+}
+
+.border{
+    border-radius: 20px;
+}
+
+.decal{
+    height: 100px;
+}
+
+.uk-badge{
+    background-color: rgb(255, 88, 88) !important;
+    color: whitesmoke !important;
+    font-size: 10px !important;
+}
