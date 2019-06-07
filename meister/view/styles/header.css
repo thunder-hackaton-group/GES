@@ -1,0 +1,75 @@
+.back-top {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.452)), url('bodyBg/back.jpg');
+}
+
+.link-top {
+    transition: background 1s !important;
+}
+
+.link-top:hover {
+    background-color: rgba(255, 255, 255, 0.055);
+}
+
+.place {
+    margin: 3vh 0 0 2vw !important;
+    cursor: default;
+}
+
+.uk-active {
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+.uk-navbar-nav li {
+    max-height: 6vw !important;
+}
+
+.uk-search-input {
+    font-size: 16px !important;
+}
+
+nav {
+    width: 100% !important;
+}
+
+.profil-img {
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.uk-child-width-expand li {
+    padding: 0 !important;
+}
+
+.uk-child-width-expand {
+    margin: 0 !important;
+}
+
+.pad {
+    padding: 10px !important;
+    color: rgba(255, 255, 255, 0.616) !important;
+}
+
+a {
+    transition: color 0.5s, background-color 0.5s !important;
+}
+
+.uk-child-width-expand li:hover>a {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgba(255, 255, 255, 0.137) !important;
+}
+
+.uk-active a {
+    color: rgb(100, 1, 95) !important;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.tabHead {
+    width: 75% !important;
+    float: right;
+}
+
+.margines {
+    margin: -1vh 2vw 0 2vw !important;
+}

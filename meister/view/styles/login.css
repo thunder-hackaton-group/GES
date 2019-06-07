@@ -1,0 +1,63 @@
+body {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    background-image: linear-gradient(rgb(246, 246, 246), rgb(104, 103, 104));
+}
+
+.small-form {
+    width: 50%;
+}
+
+.tete {
+    color: purple !important;
+}
+
+.text-tete {
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+uk-card input {
+    caret-color: blueviolet;
+    color: blueviolet !important;
+}
+
+.uk-card-body {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.content {
+    width: 80% !important;
+    margin-top: 5vh;
+}
+
+.uk-card-footer {
+    background-color: purple;
+}
+
+.valider {
+    background-color: purple !important;
+    color: white !important;
+    border: 1px solid transparent;
+    font-size: 20px !important;
+    display: inline-block !important;
+    width: 100% !important;
+}
+
+.uk-card {
+    margin-top: 18vh !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.uk-modal-dialog {
+    background-color: rgb(255, 95, 95);
+}
+
+.valider {
+    cursor: pointer !important;
+}

@@ -1,0 +1,77 @@
+body {
+    position: absolute;
+    top: 0 !important;
+    width: 100% !important;
+    background-image: linear-gradient(rgb(246, 246, 246), rgb(104, 103, 104));
+}
+
+.small-form {
+    width: 50%;
+}
+
+.tete {
+    color: purple !important;
+}
+
+.text-tete {
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+uk-card input {
+    caret-color: blueviolet;
+    color: blueviolet !important;
+}
+
+.uk-card-body {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.content {
+    width: 80% !important;
+    margin-top: 5vh;
+    padding: 0 !important;
+}
+
+.uk-card-footer {
+    background-color: purple;
+}
+
+.valider {
+    background-color: purple !important;
+    color: white !important;
+    border: 1px solid transparent;
+    font-size: 20px !important;
+    display: inline-block !important;
+    width: 100% !important;
+}
+
+.uk-card {
+    margin-top: 10vh !important;
+    margin-bottom: 5vh !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.uk-modal-dialog {
+    background-color: rgb(255, 95, 95);
+}
+
+.valider {
+    cursor: pointer !important;
+}
+
+.input-file {
+    border: 1px dashed grey !important;
+    color: rgb(28, 131, 248) !important;
+    width: 140% !important;
+    padding: 10px !important
+}
+
+::placeholder {
+    color: rgb(28, 131, 248);
+    opacity: 0.7;
+}

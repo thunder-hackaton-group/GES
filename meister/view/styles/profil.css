@@ -1,0 +1,114 @@
+.backP {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.438)), url(bodyBg/flaptP.jpg);
+}
+
+.profilImg {
+    border-radius: 1000px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.title-pr {
+    color: white !important;
+}
+
+.editB {
+    padding: 10px !important;
+    border-radius: 50px;
+    border: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: blueviolet;
+    box-shadow: 2px 2px 3px grey;
+}
+
+.offup {
+    margin-top: -10px !important;
+    color: blueviolet !important;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.profil-tab .uk-active a {
+    color: rgb(59, 59, 255) !important;
+}
+
+.profil-tab li a {
+    color: rgb(121, 121, 121) !important;
+}
+
+.profil-tab li {
+    padding: 0 !important;
+    margin-left: 2vw !important;
+}
+
+.alertP {
+    padding: 10px !important;
+    border-radius: 10px;
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.664) !important;
+}
+
+.shareB {
+    background-color: rgb(1, 138, 138) !important;
+    width: 80px;
+    height: 80px;
+    border-radius: 500px;
+}
+
+.pubButton {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+.fichPub {
+    padding: 20px !important;
+    border: 1px dashed grey !important;
+    background-color: rgba(25, 0, 255, 0.082) !important;
+}
+
+.share {
+    background-color: rgb(96, 96, 187);
+    color: white;
+    padding: 8px;
+    border: none;
+    width: 50%;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.uk-card-hover {
+    transition: box-shadow 0.4s;
+}
+
+.margin-top {
+    margin: 5vh !important;
+}
+
+.compteParam .link {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+.redBack {
+    background-color: rgb(255, 95, 95);
+}
+
+.z {
+    background-image: linear-gradient(to right, rgba(0, 0, 251, 0.637), rgba(128, 0, 128, 0.534));
+}
+
+.r {
+    background-image: linear-gradient(to left, rgba(0, 0, 251, 0.637), rgba(128, 0, 128, 0.534));
+}
+
+.changeInfo {
+    color: white;
+    border: none;
+    background-color: blueviolet;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px grey;
+    cursor: pointer;
+}

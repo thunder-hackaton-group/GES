@@ -1,0 +1,99 @@
+body {
+    max-width: 100% !important
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    max-height: 100% !important;
+    filter: brightness(75%);
+}
+
+.front,
+.behind {
+    background-color: rgba(255, 255, 255, 0.555) !important;
+    transition: background-color 1s;
+}
+
+.front {
+    padding: 50px 80px 50px 80px!important;
+    border-radius: 0 100px 0 100px;
+    border-width: 0 20px 0 20px !important;
+    border-color: rgba(99, 0, 156, 0.932) !important;
+    border-style: solid !important;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.568);
+}
+
+.connex {
+    background-color: transparent !important;
+    color: rgba(99, 0, 156, 0.932) !important;
+    font-size: 22px !important;
+    font-weight: bold !important;
+    font-variant: small-caps !important;
+}
+
+.creer {
+    background-color: transparent !important;
+    color: rgba(99, 0, 156, 0.932) !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    font-variant: small-caps !important;
+}
+
+.behind {
+    padding: 35px 60px 35px 60px!important;
+    border-radius: 100px 0 100px 0;
+    border-width: 0 20px 0 20px !important;
+    border-color: rgba(99, 0, 156, 0.932) !important;
+    border-style: solid !important;
+    box-shadow: 5px 5px 10px rgba(59, 59, 59, 0.568);
+}
+
+.logo {
+    width: 20%;
+    left: 41% !important;
+    margin: 1vh 0 0 0 !important;
+}
+
+.bBlur {
+    top: 33%;
+    left: 21%;
+    position: absolute;
+}
+
+.fBlur {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+
+.bBlur,
+.fBlur {
+    transition: filter 1s;
+}
+
+.uk-button {}
+
+.meisterLogo {
+    color: rgba(112, 0, 196, 0.932);
+    transition: filter 1s;
+}
+
+.fBlur:hover>.front,
+.bBlur:hover>.behind {
+    background-color: rgba(255, 255, 255, 0.842) !important;
+}
+
+.meisterLogo:hover {
+    filter: contrast(150%);
+}
+
+.bBlur:hover+.fBlur {
+    filter: blur(1px);
+}
+
+a:hover {
+    text-decoration: none !important;
+}

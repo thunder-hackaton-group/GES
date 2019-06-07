@@ -1,0 +1,41 @@
+.logo {
+    width: 20%;
+    margin: 1vh 0 0 40% !important;
+    display: block !important;
+}
+
+.meisterLogo {
+    color: rgba(255, 255, 255, 0.932);
+    transition: filter 1s;
+}
+
+.nav {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.pos {
+    position: relative !important;
+}
+
+.grids {
+    padding: 8vh 10vw 0 10vw;
+}
+
+h2 {
+    margin-top: 3vh;
+    font-weight: bold;
+}
+
+.uk-card-body,
+h3 {
+    cursor: pointer;
+    transition: background-color 1s, color 1s;
+}
+
+.uk-card-body:hover {
+    background-color: rgba(96, 0, 134, 0.534);
+}
